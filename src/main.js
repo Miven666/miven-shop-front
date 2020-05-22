@@ -2,13 +2,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/'
-import VueLazyload from 'vue-lazyload'
-import infiniteScroll from 'vue-infinite-scroll'
+import VueLazyLoad from 'vue-lazyload'
+import InfiniteScroll from 'vue-infinite-scroll'
 import VueCookie from 'vue-cookie'
 import { userInfo } from './api'
-import { Button, Pagination, Checkbox, Icon, Autocomplete, Loading, Message, Notification, Steps, Step, Table, TableColumn, Input, Dialog, Select, Option } from 'element-ui'
-import { getStore } from '/utils/storage'
-import VueContentPlaceholders from 'vue-content-placeholders'
+import { Button, Pagination, Checkbox, Icon, Autocomplete, Loading, Notification, Steps, Step, Table, TableColumn, Input, Dialog, Select, Option } from 'element-ui'
+import { getStore } from './utils/storage'
+import * as VueContentPlaceholders from 'vue-content-placeholders'
 Vue.use(VueContentPlaceholders)
 Vue.use(Button)
 Vue.use(Pagination)
@@ -24,12 +24,10 @@ Vue.use(Dialog)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(Loading.directive)
-Vue.prototype.$loading = Loading.service
 Vue.prototype.$notify = Notification
-Vue.prototype.$message = Message
-Vue.use(infiniteScroll)
+Vue.use(InfiniteScroll)
 Vue.use(VueCookie)
-Vue.use(VueLazyload, {
+Vue.use(VueLazyLoad, {
   // preLoad: 1.3,
   // error: 'dist/error.png',
   loading: '/static/images/load.gif'
